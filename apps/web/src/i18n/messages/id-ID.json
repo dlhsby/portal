@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "title": "Portal DLH Kota Surabaya",
+    "description": "Portal aplikasi Dinas Lingkungan Hidup Kota Surabaya — akses SEKAR dan SWAT dalam satu pintu."
+  },
+  "header": {
+    "brand": "Portal DLH",
+    "org": "Dinas Lingkungan Hidup Kota Surabaya",
+    "nav": {
+      "apps": "Aplikasi",
+      "about": "Tentang",
+      "sso": "Login SSO"
+    }
+  },
+  "hero": {
+    "eyebrow": "Satu pintu untuk semua layanan",
+    "title": "Portal Aplikasi Dinas Lingkungan Hidup Kota Surabaya",
+    "subtitle": "Akses seluruh aplikasi operasional DLH Kota Surabaya dari satu tempat. Ke depan, portal ini akan menjadi gerbang login tunggal (SSO) untuk seluruh layanan.",
+    "ctaApps": "Lihat aplikasi",
+    "ctaAbout": "Tentang DLH"
+  },
+  "apps": {
+    "title": "Aplikasi kami",
+    "subtitle": "Pilih aplikasi untuk masuk ke layanannya masing-masing.",
+    "openApp": "Buka aplikasi",
+    "sekar": {
+      "name": "SEKAR",
+      "tagline": "Manajemen & pemantauan satgas RTH",
+      "description": "Sistem pelacakan pekerja dan manajemen tugas untuk Ruang Terbuka Hijau: presensi berbasis lokasi, laporan kerja, dan dasbor pengawas secara real-time."
+    },
+    "swat": {
+      "name": "SWAT",
+      "tagline": "Operasi pengangkutan sampah terpadu",
+      "description": "Platform operasi armada dan pengangkutan sampah: pemantauan ritase, timbangan TPA, pelaporan, dan analitik untuk pengelolaan persampahan kota."
+    }
+  },
+  "about": {
+    "title": "Tentang Dinas Lingkungan Hidup",
+    "body": "Dinas Lingkungan Hidup (DLH) Kota Surabaya bertugas menjaga kualitas lingkungan hidup kota — mulai dari pengelolaan ruang terbuka hijau, kebersihan dan persampahan, hingga pengendalian pencemaran. Portal ini menyatukan aplikasi-aplikasi digital yang mendukung pekerjaan tersebut agar lebih cepat, transparan, dan terukur.",
+    "points": {
+      "rth": {
+        "title": "Ruang Terbuka Hijau",
+        "description": "Perawatan taman dan penghijauan kota oleh satgas RTH di seluruh rayon."
+      },
+      "waste": {
+        "title": "Kebersihan & Persampahan",
+        "description": "Pengangkutan dan pengelolaan sampah kota secara terpadu hingga ke TPA."
+      },
+      "digital": {
+        "title": "Layanan Digital",
+        "description": "Digitalisasi operasional lapangan untuk pengambilan keputusan berbasis data."
+      }
+    }
+  },
+  "sso": {
+    "badge": "Segera hadir",
+    "title": "Login tunggal (SSO) untuk semua aplikasi",
+    "description": "Satu akun untuk mengakses seluruh aplikasi DLH Kota Surabaya. Fitur Single Sign-On sedang kami siapkan — untuk saat ini silakan masuk melalui masing-masing aplikasi di atas.",
+    "cta": "Login SSO"
+  },
+  "footer": {
+    "tagline": "Portal aplikasi Dinas Lingkungan Hidup Kota Surabaya.",
+    "contactTitle": "Kontak",
+    "address": "Jl. Jimerto No. 25-27, Surabaya, Jawa Timur",
+    "email": "dlh@surabaya.go.id",
+    "phone": "(031) 531 2144",
+    "appsTitle": "Aplikasi",
+    "copyright": "Pemerintah Kota Surabaya. Seluruh hak cipta dilindungi."
+  }
+}

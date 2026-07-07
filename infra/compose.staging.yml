@@ -1,0 +1,47 @@
+# Portal DLH — AWS staging stack (co-tenant on the shared dlhsby EC2 host).
+#
+# The portal is a pure static landing page: ONE app container, no database, no
+# Redis, no secrets. It reuses the box's existing shared Caddy (owned by the
+# sekar stack) as the TLS edge — the portal does NOT run its own Caddy. The app
+# container joins the shared external `edge` network so Caddy reaches it by
+# container name (see infra/portal.caddy).
+#
+# Usage on the box (run by the GitHub Actions deploy over SSM):
+#   IMAGE_TAG=<git-sha> docker compose -f compose.staging.yml pull
+#   IMAGE_TAG=<git-sha> docker compose -f compose.staging.yml up -d --wait
+
+name: portal-staging
+
+x-logging: &default-logging
+  driver: json-file
+  options:
+    max-size: '10m'
+    max-file: '3'
+
+services:
+  web:
+    image: 659828096624.dkr.ecr.ap-southeast-3.amazonaws.com/portal-web:${IMAGE_TAG:-staging}
+    container_name: portal-web
+    environment:
+      NODE_ENV: production
+      PORT: '3000'
+      HOSTNAME: '0.0.0.0'
+    expose:
+      - '3000' # internal only; reached via the shared Caddy on the edge network
+    healthcheck:
+      test: ['CMD', 'wget', '--no-verbose', '--tries=1', '--spider', 'http://127.0.0.1:3000/']
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    mem_limit: 192m
+    mem_reservation: 96m
+    restart: unless-stopped
+    logging: *default-logging
+    networks: [edge]
+
+networks:
+  # Shared bridge so the box's Caddy reaches portal-web by container name.
+  # Created on the box (`docker network create edge`) and declared external here.
+  edge:
+    external: true

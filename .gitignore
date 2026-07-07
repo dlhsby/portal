@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build output
+.next/
+dist/
+out/
+.turbo/
+
+# Test / coverage
+coverage/
+
+# TypeScript incremental build info
+*.tsbuildinfo
+
+# Env (no secrets in this project, but never commit local env files)
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Next.js
+next-env.d.ts

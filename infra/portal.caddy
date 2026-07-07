@@ -1,0 +1,22 @@
+# Portal DLH — Caddy DROP-IN for the landing page at dlh.wahyutrip.com.
+#
+# The shared box's Caddy is owned by the sekar stack. The portal is a co-tenant
+# (exactly like SWAT): it does NOT run its own Caddy — 80/443 are already bound.
+# The box Caddyfile imports co-tenant files via `import /etc/caddy/conf.d/*.caddy`,
+# and this deploy copies THIS file to the box's `conf.d/portal.caddy`, then
+# restarts the shared caddy container.
+#
+# Why a drop-in (not an edit to the box Caddyfile): the sekar deploy REGENERATES
+# its own Caddyfile from its repo and would wipe any block appended there. A
+# separate imported file that sekar never overwrites is clobber-proof — and this
+# deploy only ever writes THIS one file, so sekar and swat config is untouched.
+#
+# Bare hostname → Caddy auto-provisions a free Let's Encrypt cert and redirects
+# HTTP→HTTPS (DNS A record for dlh.wahyutrip.com points at the shared Elastic IP;
+# 80/443 are open). The portal-web container joins the shared `edge` network
+# (compose.staging.yml), so Caddy reaches it by container name.
+
+dlh.wahyutrip.com {
+	encode gzip
+	reverse_proxy portal-web:3000
+}

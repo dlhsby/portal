@@ -1,0 +1,22 @@
+{
+  "name": "@portal/eslint-config",
+  "version": "0.1.0",
+  "private": true,
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./next": "./next.js"
+  },
+  "files": ["index.js", "next.js"],
+  "dependencies": {
+    "@eslint/js": "^9.39.4",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-import-resolver-typescript": "^4.4.5",
+    "eslint-plugin-import": "^2.32.0",
+    "globals": "^17.6.0",
+    "typescript-eslint": "^8.61.1"
+  },
+  "peerDependencies": {
+    "eslint": "^9.0.0"
+  }
+}
