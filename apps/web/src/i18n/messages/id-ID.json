@@ -25,13 +25,13 @@
     "openApp": "Buka aplikasi",
     "sekar": {
       "name": "SEKAR",
-      "tagline": "Manajemen & pemantauan satgas RTH",
-      "description": "Sistem pelacakan pekerja dan manajemen tugas untuk Ruang Terbuka Hijau: presensi berbasis lokasi, laporan kerja, dan dasbor pengawas secara real-time."
+      "tagline": "Sistem Evaluasi Kinerja Satgas RTH",
+      "description": "Aplikasi manajemen kinerja pekerja lapangan DLH Kota Surabaya: presensi digital dengan foto verifikasi dan GPS, pelacakan posisi pekerja secara real-time, serta laporan kerja digital untuk tim lapangan dan supervisor."
     },
     "swat": {
       "name": "SWAT",
-      "tagline": "Operasi pengangkutan sampah terpadu",
-      "description": "Platform operasi armada dan pengangkutan sampah: pemantauan ritase, timbangan TPA, pelaporan, dan analitik untuk pengelolaan persampahan kota."
+      "tagline": "Sistem pencatatan pengangkutan sampah & retribusi",
+      "description": "Sistem pencatatan pengangkutan sampah dan retribusi milik DLH Kota Surabaya: memantau kinerja armada, mengelola data master, dan mencatat aktivitas pengangkutan sampah kota sehari-hari."
     }
   },
   "about": {

@@ -1,16 +1,11 @@
-import { ArrowUpRight, type LucideIcon } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
 import { type PortalApp } from '@/config/apps';
-import { cn } from '@/lib/cn';
-
-type AppCardProps = {
-  app: PortalApp;
-  icon: LucideIcon;
-};
 
 /** Card linking out to one app (SEKAR / SWAT). Opens the app in a new tab. */
-export function AppCard({ app, icon: Icon }: AppCardProps) {
+export function AppCard({ app }: { app: PortalApp }) {
   const t = useTranslations('apps');
 
   return (
@@ -21,15 +16,14 @@ export function AppCard({ app, icon: Icon }: AppCardProps) {
       className="group relative flex flex-col rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-0.5 hover:border-emerald-300 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
     >
       <div className="flex items-start justify-between">
-        <span
-          className={cn(
-            'flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br text-white shadow-sm',
-            app.accentFrom,
-            app.accentTo,
-          )}
-        >
-          <Icon className="h-7 w-7" aria-hidden />
-        </span>
+        <Image
+          src={app.logo}
+          alt={`Logo ${t(`${app.key}.name`)}`}
+          width={56}
+          height={56}
+          unoptimized
+          className="h-14 w-14"
+        />
         <ArrowUpRight
           className="h-5 w-5 text-slate-300 transition group-hover:text-emerald-600"
           aria-hidden
