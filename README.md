@@ -83,6 +83,14 @@ GitHub Actions then:
    shared Caddy's `conf.d/`, `docker compose up -d --wait`, reloads the shared Caddy,
 4. smoke-tests `https://dlh.wahyutrip.com`.
 
+**Storage hygiene** (so the shared box and ECR don't fill up, matching sekar):
+
+- On the box, each deploy runs `docker image prune -af` + `docker builder prune -af`
+  before pulling and `docker image prune -f` after recreating — reclaiming unused
+  layers/cache only (never volumes, certs, or live images).
+- The `portal-web` ECR repo has a lifecycle policy: **expire untagged images after
+  1 day** and **keep only the last 10** tagged images.
+
 ### One-time operator prerequisites
 
 These need AWS/GitHub console access and are done once:

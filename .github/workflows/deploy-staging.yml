@@ -118,11 +118,17 @@ jobs:
           docker network create edge 2>/dev/null || true
           cd ~/portal/infra
           export IMAGE_TAG=$SHA
-          # Reclaim disk before pulling the new SHA-pinned image (running containers
-          # keep their images; this only drops unused layers/build cache).
+          # Reclaim disk BEFORE pulling the new SHA-pinned image so the shared box
+          # doesn't accumulate one image set per deploy (it has hit "no space left"
+          # before). Running containers keep their images referenced, so this only
+          # drops unused image layers + build cache — never volumes, certs, or the
+          # live sekar/swat/portal images. Mirrors the sekar deploy's cleanup.
           docker image prune -af || true
+          docker builder prune -af || true
+          df -h / | tail -1
           docker compose -f compose.staging.yml pull --quiet
           docker compose -f compose.staging.yml up -d --force-recreate --wait
+          # Drop the now-dangling previous portal-web image left by this recreate.
           docker image prune -f
 
           # Reload the shared edge Caddy so it picks up the new drop-in + upstream.
