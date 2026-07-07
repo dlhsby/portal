@@ -36,7 +36,7 @@
   },
   "about": {
     "title": "Tentang Dinas Lingkungan Hidup",
-    "body": "Dinas Lingkungan Hidup (DLH) Kota Surabaya bertugas menjaga kualitas lingkungan hidup kota — mulai dari pengelolaan ruang terbuka hijau, kebersihan dan persampahan, hingga pengendalian pencemaran. Portal ini menyatukan aplikasi-aplikasi digital yang mendukung pekerjaan tersebut agar lebih cepat, transparan, dan terukur.",
+    "body": "Dinas Lingkungan Hidup (DLH) Kota Surabaya bertugas menjaga dan meningkatkan kualitas lingkungan hidup kota — menjaga kualitas udara dan air, mengelola ruang terbuka hijau, menangani kebersihan dan persampahan, serta meningkatkan kualitas pelayanan publik. Portal ini menyatukan aplikasi digital yang mendukung tugas tersebut agar pelayanan lebih cepat, transparan, dan terukur.",
     "points": {
       "rth": {
         "title": "Ruang Terbuka Hijau",
@@ -61,9 +61,11 @@
   "footer": {
     "tagline": "Portal aplikasi Dinas Lingkungan Hidup Kota Surabaya.",
     "contactTitle": "Kontak",
-    "address": "Jl. Jimerto No. 25-27, Surabaya, Jawa Timur",
-    "email": "dlh@surabaya.go.id",
-    "phone": "(031) 531 2144",
+    "address": "Jl. Raya Menur No. 31A, Manyar Sabrangan, Kec. Mulyorejo, Surabaya, Jawa Timur 60285",
+    "phone": "(031) 5967387",
+    "fax": "Fax (031) 5932419",
+    "website": "lh.surabaya.go.id",
+    "websiteUrl": "https://lh.surabaya.go.id/weblh/",
     "appsTitle": "Aplikasi",
     "copyright": "Pemerintah Kota Surabaya. Seluruh hak cipta dilindungi."
   }

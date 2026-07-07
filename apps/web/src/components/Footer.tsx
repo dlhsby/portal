@@ -1,4 +1,5 @@
-import { Leaf, Mail, MapPin, Phone } from 'lucide-react';
+import { Globe, MapPin, Phone, Printer } from 'lucide-react';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
 import { apps } from '@/config/apps';
@@ -17,9 +18,13 @@ export function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2.5">
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white">
-                <Leaf className="h-5 w-5" aria-hidden />
-              </span>
+              <Image
+                src="/dlh-logo.png"
+                alt="Logo Dinas Lingkungan Hidup Kota Surabaya"
+                width={197}
+                height={281}
+                className="h-9 w-auto"
+              />
               <span className="text-sm font-bold text-slate-900">{tHeader('brand')}</span>
             </div>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-slate-600">{t('tagline')}</p>
@@ -34,14 +39,23 @@ export function Footer() {
                 <span>{t('address')}</span>
               </li>
               <li className="flex items-center gap-2.5">
-                <Mail className="h-4 w-4 shrink-0 text-emerald-600" aria-hidden />
-                <a href={`mailto:${t('email')}`} className="hover:text-emerald-700">
-                  {t('email')}
-                </a>
-              </li>
-              <li className="flex items-center gap-2.5">
                 <Phone className="h-4 w-4 shrink-0 text-emerald-600" aria-hidden />
                 <span>{t('phone')}</span>
+              </li>
+              <li className="flex items-center gap-2.5">
+                <Printer className="h-4 w-4 shrink-0 text-emerald-600" aria-hidden />
+                <span>{t('fax')}</span>
+              </li>
+              <li className="flex items-center gap-2.5">
+                <Globe className="h-4 w-4 shrink-0 text-emerald-600" aria-hidden />
+                <a
+                  href={t('websiteUrl')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-emerald-700"
+                >
+                  {t('website')}
+                </a>
               </li>
             </ul>
           </div>

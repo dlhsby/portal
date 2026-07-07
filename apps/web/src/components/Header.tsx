@@ -1,4 +1,4 @@
-import { Leaf } from 'lucide-react';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
 /** Sticky top bar: brand mark + section anchors. */
@@ -9,9 +9,14 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <a href="#top" className="flex items-center gap-2.5">
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white shadow-sm">
-            <Leaf className="h-5 w-5" aria-hidden />
-          </span>
+          <Image
+            src="/dlh-logo.png"
+            alt="Logo Dinas Lingkungan Hidup Kota Surabaya"
+            width={197}
+            height={281}
+            priority
+            className="h-9 w-auto"
+          />
           <span className="flex flex-col leading-tight">
             <span className="text-sm font-bold tracking-tight text-slate-900">{t('brand')}</span>
             <span className="hidden text-xs text-slate-500 sm:block">{t('org')}</span>
